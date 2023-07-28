@@ -3,9 +3,9 @@ import { fetchAllUsers, updateFollowers } from "../../utils/users-api";
 
 export const fetchAllUsersThunk = createAsyncThunk(
   "users/fetchAll",
-  async (_, { rejectWithValue }) => {
+  async (limit, { rejectWithValue }) => {
     try {
-      const users = fetchAllUsers();
+      const users = fetchAllUsers(limit);
       return users;
     } catch (error) {
       return rejectWithValue(error.message);
@@ -15,17 +15,13 @@ export const fetchAllUsersThunk = createAsyncThunk(
 
 export const updateUserFollowersThunk = createAsyncThunk(
   "users/updateUserFollowers",
-  async (
-    { id, updatedFollowers, isFollowed },
-    { dispatch, rejectWithValue }
-  ) => {
+  async ({ id, updatedFollowers, isFollowed }, { rejectWithValue }) => {
     try {
       const response = await updateFollowers({
         id,
         updatedFollowers,
         isFollowed,
       });
-      dispatch(fetchAllUsersThunk());
       return response.data;
     } catch (error) {
       return rejectWithValue(error.message);
