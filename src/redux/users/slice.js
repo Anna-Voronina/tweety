@@ -6,7 +6,6 @@ const initialState = {
   limit: 3,
   followingInProgress: [],
   isLoading: false,
-  isFollowing: false,
   error: null,
 };
 
