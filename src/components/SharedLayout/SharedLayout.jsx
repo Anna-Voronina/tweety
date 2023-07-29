@@ -1,30 +1,19 @@
 import { Suspense } from "react";
-import { NavLink, Outlet } from "react-router-dom";
-
-const links = [
-  { path: "/", title: "Home" },
-  { path: "/tweets", title: "Tweets" },
-];
+import { Outlet } from "react-router-dom";
+import { Header } from "../Header/Header";
+import { StyledContainer, StyledMain } from "./SharedLayout.styled";
 
 export const SharedLayout = () => {
   return (
     <>
-      <header>
-        <nav>
-          <ul>
-            {links.map(({ path, title }) => (
-              <li key={title}>
-                <NavLink to={path}>{title}</NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
-      </header>
-      <main>
-        <Suspense fallback={<h1>Loading...</h1>}>
-          <Outlet />
-        </Suspense>
-      </main>
+      <Header />
+      <StyledMain>
+        <StyledContainer>
+          <Suspense fallback={<h1>Loading...</h1>}>
+            <Outlet />
+          </Suspense>
+        </StyledContainer>
+      </StyledMain>
     </>
   );
 };

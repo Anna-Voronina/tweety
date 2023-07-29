@@ -1,14 +1,26 @@
-import { useSelector } from "react-redux";
+import PropTypes from "prop-types";
 import { UserCard } from "../UserCard/UserCard";
-import { selectFilteredData } from "../../redux/users/selectors";
-import { useState } from "react";
+import { CardList } from "./UserList.styled";
 
 export const UserList = ({ users }) => {
   return (
-    <ul>
+    <CardList>
       {users.map((user) => (
         <UserCard key={user.id} userData={user} />
       ))}
-    </ul>
+    </CardList>
   );
+};
+
+UserList.propTypes = {
+  users: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string,
+      user: PropTypes.string,
+      avatar: PropTypes.string,
+      followers: PropTypes.number,
+      tweets: PropTypes.number,
+      isFollowed: PropTypes.bool,
+    }).isRequired
+  ).isRequired,
 };

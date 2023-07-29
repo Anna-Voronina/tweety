@@ -1,5 +1,7 @@
 import { useDispatch } from "react-redux";
+import Select, { components } from "react-select";
 import { setFilter } from "../../redux/filter/slice";
+import { selectStyles } from "./FilterSelect.styled";
 
 const options = [
   {
@@ -19,17 +21,17 @@ const options = [
 export const FilterSelect = () => {
   const dispatch = useDispatch();
 
-  const handleSelectChange = ({ target: { value } }) => {
+  const handleSelectChange = ({ value }) => {
     dispatch(setFilter(value));
   };
 
   return (
-    <select aria-label="select" name="filter" onChange={handleSelectChange}>
-      {options.map(({ value, label }) => (
-        <option key={value} value={value}>
-          {label}
-        </option>
-      ))}
-    </select>
+    <Select
+      name="filter"
+      defaultValue={options[0]}
+      options={options}
+      onChange={handleSelectChange}
+      styles={selectStyles}
+    />
   );
 };
