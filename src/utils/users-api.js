@@ -12,8 +12,6 @@ export const fetchAllUsers = async (limit) => {
     },
   });
 
-  console.log(response);
-
   const data = {
     users: response.data,
     limit: response.config.params.limit,

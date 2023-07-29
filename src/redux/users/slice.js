@@ -4,7 +4,9 @@ import { fetchAllUsersThunk, updateUserFollowersThunk } from "./operations";
 const initialState = {
   users: [],
   limit: 3,
+  followingInProgress: [],
   isLoading: false,
+  isFollowing: false,
   error: null,
 };
 
@@ -20,6 +22,15 @@ const handlePendingStatus = (state) => {
 const usersSlice = createSlice({
   name: "users",
   initialState,
+  reducers: {
+    filterFollowingInProgress(state, { payload }) {
+      payload.isFollowing
+        ? state.followingInProgress.push(payload.id)
+        : (state.followingInProgress = state.followingInProgress.filter(
+            (id) => id !== payload.id
+          ));
+    },
+  },
   extraReducers: (builder) =>
     builder
       .addCase(fetchAllUsersThunk.fulfilled, (state, { payload }) => {
@@ -43,3 +54,4 @@ const usersSlice = createSlice({
 });
 
 export const usersReducer = usersSlice.reducer;
+export const { filterFollowingInProgress } = usersSlice.actions;
