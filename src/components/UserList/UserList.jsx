@@ -1,10 +1,9 @@
 import { useSelector } from "react-redux";
 import { UserCard } from "../UserCard/UserCard";
-import { selectAllUsers } from "../../redux/users/selectors";
+import { selectFilteredData } from "../../redux/users/selectors";
+import { useState } from "react";
 
-export const UserList = () => {
-  const users = useSelector(selectAllUsers);
-
+export const UserList = ({ users }) => {
   return (
     <ul>
       {users.map((user) => (

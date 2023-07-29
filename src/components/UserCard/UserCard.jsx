@@ -4,14 +4,9 @@ import {
   fetchAllUsersThunk,
   updateUserFollowersThunk,
 } from "../../redux/users/operations";
-import {
-  selectFollowingInProgress,
-  selectIsLoading,
-  selectLimit,
-} from "../../redux/users/selectors";
+import { selectFollowingInProgress } from "../../redux/users/selectors";
 
 export const UserCard = ({ userData }) => {
-  const limit = useSelector(selectLimit);
   const followingInProgress = useSelector(selectFollowingInProgress);
   const dispatch = useDispatch();
 
@@ -25,7 +20,7 @@ export const UserCard = ({ userData }) => {
         isFollowed: !isFollowed,
       })
     ).then(() => {
-      dispatch(fetchAllUsersThunk(limit));
+      dispatch(fetchAllUsersThunk());
     });
   };
 

@@ -3,7 +3,6 @@ import { fetchAllUsersThunk, updateUserFollowersThunk } from "./operations";
 
 const initialState = {
   users: [],
-  limit: 3,
   followingInProgress: [],
   isLoading: false,
   error: null,
@@ -33,8 +32,7 @@ const usersSlice = createSlice({
   extraReducers: (builder) =>
     builder
       .addCase(fetchAllUsersThunk.fulfilled, (state, { payload }) => {
-        state.users = payload.users;
-        state.limit = payload.limit;
+        state.users = payload;
         state.isLoading = false;
         state.error = null;
       })

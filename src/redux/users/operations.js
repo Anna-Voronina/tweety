@@ -4,9 +4,9 @@ import { filterFollowingInProgress } from "./slice";
 
 export const fetchAllUsersThunk = createAsyncThunk(
   "users/fetchAll",
-  async (limit, { rejectWithValue }) => {
+  async (_, { rejectWithValue }) => {
     try {
-      const users = fetchAllUsers(limit);
+      const users = fetchAllUsers();
       return users;
     } catch (error) {
       return rejectWithValue(error.message);

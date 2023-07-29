@@ -1,26 +1,35 @@
 import { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { UserList } from "../../components/UserList/UserList";
 import { fetchAllUsersThunk } from "../../redux/users/operations";
+import { FilterSelect } from "../../components/FilterSelect/FilterSelect";
+import { selectFilteredData } from "../../redux/users/selectors";
 
 const TweetsPage = () => {
   const dispatch = useDispatch();
-  const [limit, setLimit] = useState(3);
+  const filteredUsers = useSelector(selectFilteredData);
+  const [visible, setVisible] = useState(3);
 
   useEffect(() => {
-    dispatch(fetchAllUsersThunk(limit));
-  }, [dispatch, limit]);
+    dispatch(fetchAllUsersThunk());
+  }, [dispatch]);
 
   const handleClick = () => {
-    setLimit((prev) => prev + 3);
+    setVisible((prev) => prev + 3);
   };
+
+  const visibleUsers = filteredUsers.slice(0, visible);
+  const isLoadMoreBtnShown = filteredUsers.length > visibleUsers.length;
 
   return (
     <>
-      <UserList />
-      <button onClick={handleClick} type="button">
-        Load more
-      </button>
+      <FilterSelect />
+      <UserList users={visibleUsers} />
+      {isLoadMoreBtnShown && (
+        <button onClick={handleClick} type="button">
+          Load more
+        </button>
+      )}
     </>
   );
 };
