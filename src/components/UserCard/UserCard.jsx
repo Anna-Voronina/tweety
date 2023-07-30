@@ -9,17 +9,16 @@ import {
   AvatarThumb,
   BgImgThumb,
   Card,
-  StyledButton,
   StyledInfoText,
   StyledLogoIcon,
   UserInfo,
 } from "./UserCard.styled";
 
-import cardBgImg from "./../../assets/background.png";
-import cardBgImgRetina from "./../../assets/background@2x.png";
-import cardBgImgWebp from "./../../assets/background.webp";
-import cardBgImgWebpRetina from "./../../assets/background@2x.webp";
-import logoIcon from "./../../assets/goit-logo.svg";
+import cardBgImg from "./../../assets/images/background.png";
+import cardBgImgRetina from "./../../assets/images/background@2x.png";
+import cardBgImgWebp from "./../../assets/images/background.webp";
+import cardBgImgWebpRetina from "./../../assets/images/background@2x.webp";
+import logoIcon from "./../../assets/images/goit-logo.svg";
 import { Button } from "../Button/Button";
 
 export const UserCard = ({ userData }) => {

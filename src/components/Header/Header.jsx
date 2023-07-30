@@ -6,10 +6,10 @@ import {
   StyledHeader,
   StyledNavLink,
 } from "./Header.styled";
-import logoImg from "./../../assets/logo.png";
-import logoImgRetina from "./../../assets/logo@2x.png";
-import logoImgWebp from "./../../assets/logo.webp";
-import logoImgWebpRetina from "./../../assets/logo@2x.webp";
+import logoImg from "./../../assets/images/logo.png";
+import logoImgRetina from "./../../assets/images/logo@2x.png";
+import logoImgWebp from "./../../assets/images/logo.webp";
+import logoImgWebpRetina from "./../../assets/images/logo@2x.webp";
 
 const links = [
   { path: "/", title: "Home" },
