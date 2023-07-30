@@ -11,6 +11,7 @@ import {
   Card,
   StyledButton,
   StyledInfoText,
+  StyledLogoIcon,
   UserInfo,
 } from "./UserCard.styled";
 
@@ -18,6 +19,8 @@ import cardBgImg from "./../../assets/background.png";
 import cardBgImgRetina from "./../../assets/background@2x.png";
 import cardBgImgWebp from "./../../assets/background.webp";
 import cardBgImgWebpRetina from "./../../assets/background@2x.webp";
+import logoIcon from "./../../assets/goit-logo.svg";
+import { Button } from "../Button/Button";
 
 export const UserCard = ({ userData }) => {
   const followingInProgress = useSelector(selectFollowingInProgress);
@@ -25,7 +28,7 @@ export const UserCard = ({ userData }) => {
 
   const { id, avatar, user, followers, tweets, isFollowed } = userData;
 
-  const handleClick = (id) => {
+  const handleBtnClick = (id) => {
     dispatch(
       updateUserFollowersThunk({
         id,
@@ -51,6 +54,7 @@ export const UserCard = ({ userData }) => {
           />
           <img src={cardBgImg} alt="messages" />
         </picture>
+        <StyledLogoIcon src={logoIcon} alt="GoIT logo" />
       </BgImgThumb>
 
       <AvatarThumb>
@@ -62,14 +66,12 @@ export const UserCard = ({ userData }) => {
         <StyledInfoText>{`${followers} followers`}</StyledInfoText>
       </UserInfo>
 
-      <StyledButton
-        onClick={() => handleClick(id)}
+      <Button
+        label={isFollowed ? "Following" : "Follow"}
+        handleClick={() => handleBtnClick(id)}
         disabled={followingInProgress.some((userId) => userId === id)}
-        type="button"
-        $primary={isFollowed}
-      >
-        {isFollowed ? "Following" : "Follow"}
-      </StyledButton>
+        version={isFollowed ? "secondary" : "primary"}
+      />
     </Card>
   );
 };

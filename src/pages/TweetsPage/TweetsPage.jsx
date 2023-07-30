@@ -4,6 +4,7 @@ import { UserList } from "../../components/UserList/UserList";
 import { fetchAllUsersThunk } from "../../redux/users/operations";
 import { FilterSelect } from "../../components/FilterSelect/FilterSelect";
 import { selectFilteredData } from "../../redux/users/selectors";
+import { Button } from "../../components/Button/Button";
 
 const TweetsPage = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const TweetsPage = () => {
     dispatch(fetchAllUsersThunk());
   }, [dispatch]);
 
-  const handleClick = () => {
+  const handleLoadMoreBtnClick = () => {
     setVisible((prev) => prev + 3);
   };
 
@@ -23,12 +24,14 @@ const TweetsPage = () => {
 
   return (
     <>
-      <FilterSelect />
+      <FilterSelect setVisibleCards={setVisible} />
       <UserList users={visibleUsers} />
       {isLoadMoreBtnShown && (
-        <button onClick={handleClick} type="button">
-          Load more
-        </button>
+        <Button
+          label="Load more"
+          handleClick={handleLoadMoreBtnClick}
+          version="third"
+        />
       )}
     </>
   );

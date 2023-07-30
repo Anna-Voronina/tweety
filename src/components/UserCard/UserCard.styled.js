@@ -96,3 +96,11 @@ export const StyledButton = styled.button`
     filter: blur(1px);
   }
 `;
+
+export const StyledLogoIcon = styled.img`
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 76px;
+  height: 22px;
+`;

@@ -1,5 +1,6 @@
 import { useDispatch } from "react-redux";
-import Select, { components } from "react-select";
+import Select from "react-select";
+import PropTypes from "prop-types";
 import { setFilter } from "../../redux/filter/slice";
 import { selectStyles } from "./FilterSelect.styled";
 
@@ -18,11 +19,12 @@ const options = [
   },
 ];
 
-export const FilterSelect = () => {
+export const FilterSelect = ({ setVisibleCards }) => {
   const dispatch = useDispatch();
 
   const handleSelectChange = ({ value }) => {
     dispatch(setFilter(value));
+    setVisibleCards(3);
   };
 
   return (
@@ -34,4 +36,8 @@ export const FilterSelect = () => {
       styles={selectStyles}
     />
   );
+};
+
+FilterSelect.propTypes = {
+  setVisibleCards: PropTypes.func,
 };
