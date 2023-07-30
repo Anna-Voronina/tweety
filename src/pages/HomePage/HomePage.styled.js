@@ -10,6 +10,7 @@ export const DescrWrapper = styled.div`
   justify-content: center;
   align-items: center;
   gap: 30px;
+  padding-left: 35px;
 `;
 
 export const Title = styled.h1`
@@ -21,7 +22,7 @@ export const Title = styled.h1`
 export const TitleShadow = styled.span`
   position: absolute;
   top: -50px;
-  left: -30px;
+  left: -32px;
 
   font-size: 70px;
   color: ${({ theme }) => theme.colors.lightGolden};
@@ -36,8 +37,11 @@ export const Slogan = styled.h2`
 `;
 
 export const DescrText = styled.p`
+  max-width: 250px;
+
   font-size: ${({ theme }) => theme.fontSizes.medium};
   text-align: center;
+  line-height: 1.8;
   color: ${({ theme }) => theme.colors.lightViolet};
 `;
 

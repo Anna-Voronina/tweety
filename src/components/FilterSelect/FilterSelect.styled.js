@@ -1,7 +1,7 @@
 export const selectStyles = {
   container: (styles) => ({
     ...styles,
-    left: "42%",
+    marginLeft: "42%",
     marginBottom: "30px",
   }),
   control: (styles) => ({

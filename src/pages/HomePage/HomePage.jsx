@@ -21,7 +21,7 @@ const HomePage = () => {
           Tweety
           <TitleShadow>Tweety</TitleShadow>
         </Title>
-        <Slogan>Where the world comes together</Slogan>
+        <Slogan>Where the world comes together.</Slogan>
         <DescrText>
           Connect with friends, share your thoughts, and discover new things.
         </DescrText>

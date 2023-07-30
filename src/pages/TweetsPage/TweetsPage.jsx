@@ -5,6 +5,7 @@ import { fetchAllUsersThunk } from "../../redux/users/operations";
 import { FilterSelect } from "../../components/FilterSelect/FilterSelect";
 import { selectFilteredData } from "../../redux/users/selectors";
 import { Button } from "../../components/Button/Button";
+import { ArrowIcon, StyledLink } from "./TweetsPage.styled";
 
 const TweetsPage = () => {
   const dispatch = useDispatch();
@@ -24,6 +25,10 @@ const TweetsPage = () => {
 
   return (
     <>
+      <StyledLink to="/">
+        <ArrowIcon />
+        Back
+      </StyledLink>
       <FilterSelect setVisibleCards={setVisible} />
       <UserList users={visibleUsers} />
       {isLoadMoreBtnShown && (

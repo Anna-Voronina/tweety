@@ -1,20 +1,10 @@
-import {
-  LogoLink,
-  LogoPicture,
-  NavList,
-  NavListItem,
-  StyledHeader,
-  StyledNavLink,
-} from "./Header.styled";
+import { LogoLink, LogoPicture, StyledHeader } from "./Header.styled";
+
 import logoImg from "./../../assets/images/logo.png";
 import logoImgRetina from "./../../assets/images/logo@2x.png";
 import logoImgWebp from "./../../assets/images/logo.webp";
 import logoImgWebpRetina from "./../../assets/images/logo@2x.webp";
-
-const links = [
-  { path: "/", title: "Home" },
-  { path: "/tweets", title: "Tweets" },
-];
+import { NavBar } from "../NavBar/NavBar";
 
 export const Header = () => {
   return (
@@ -32,15 +22,7 @@ export const Header = () => {
           <img src={logoImg} alt="logo" />
         </LogoPicture>
       </LogoLink>
-      <nav>
-        <NavList>
-          {links.map(({ path, title }) => (
-            <NavListItem key={title}>
-              <StyledNavLink to={path}>{title}</StyledNavLink>
-            </NavListItem>
-          ))}
-        </NavList>
-      </nav>
+      <NavBar />
     </StyledHeader>
   );
 };
