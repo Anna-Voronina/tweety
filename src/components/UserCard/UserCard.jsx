@@ -27,6 +27,8 @@ export const UserCard = ({ userData }) => {
   const dispatch = useDispatch();
 
   const { id, avatar, user, followers, tweets, isFollowed } = userData;
+  const formattedTweetsNumber = tweets.toLocaleString("en-US");
+  const formattedFollowersNumber = followers.toLocaleString("en-US");
 
   const handleBtnClick = (id) => {
     dispatch(
@@ -62,8 +64,8 @@ export const UserCard = ({ userData }) => {
       </AvatarThumb>
 
       <UserInfo>
-        <StyledInfoText>{`${tweets} tweets`}</StyledInfoText>
-        <StyledInfoText>{`${followers} followers`}</StyledInfoText>
+        <StyledInfoText>{`${formattedTweetsNumber} tweets`}</StyledInfoText>
+        <StyledInfoText>{`${formattedFollowersNumber} followers`}</StyledInfoText>
       </UserInfo>
 
       <Button
