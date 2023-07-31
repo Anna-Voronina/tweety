@@ -12,7 +12,7 @@ import {
 import bannerImg from "./../../assets/images/banner.png";
 import bannerImgRetina from "./../../assets/images/banner@2x.png";
 import bannerImgWebp from "./../../assets/images/banner.webp";
-import bannerImgWebpRetina from "./../../assets/images/background@2x.webp";
+import bannerImgWebpRetina from "./../../assets/images/banner@2x.webp";
 
 const HomePage = () => {
   return (
