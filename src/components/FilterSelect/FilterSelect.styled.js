@@ -1,8 +1,19 @@
+const breakpoints = {
+  tablet: `@media only screen and (min-width: 768px)`,
+  desktop: `@media only screen and (min-width: 1280px)`,
+};
+
 export const selectStyles = {
   container: (styles) => ({
     ...styles,
-    marginLeft: "42%",
+    marginLeft: "18%",
     marginBottom: "30px",
+    [breakpoints.tablet]: {
+      marginLeft: "37%",
+    },
+    [breakpoints.desktop]: {
+      marginLeft: "42%",
+    },
   }),
   control: (styles) => ({
     ...styles,

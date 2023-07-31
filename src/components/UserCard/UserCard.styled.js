@@ -6,14 +6,21 @@ export const Card = styled.li`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 460px;
-  flex-basis: calc((100% - 100px) / 3);
 
   padding-top: ${({ theme }) => theme.spacing(7)};
   padding-bottom: ${({ theme }) => theme.spacing(9)};
   background: linear-gradient(142deg, #471ca9 0%, #5736a3 69.1%, #4b2a99 100%);
   border-radius: 20px;
   box-shadow: ${({ theme }) => theme.shadows.card};
+
+  @media only screen and (min-width: 768px) {
+    min-height: 460px;
+    flex-basis: calc((100% - 50px) / 2);
+  }
+
+  @media only screen and (min-width: 1280px) {
+    flex-basis: calc((100% - 100px) / 3);
+  }
 `;
 
 export const BgImgThumb = styled.div`
@@ -36,7 +43,7 @@ export const BgImgThumb = styled.div`
 
 export const AvatarThumb = styled.div`
   position: absolute;
-  top: 46%;
+  top: 43%;
   left: 50%;
   transform: translate(-50%, -50%);
 

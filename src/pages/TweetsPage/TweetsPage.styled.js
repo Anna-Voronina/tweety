@@ -8,7 +8,8 @@ export const StyledLink = styled(Link)`
   gap: 15px;
   max-width: 150px;
 
-  padding: ${({ theme }) => theme.spacing(3)};
+  margin: 15px auto;
+  padding: ${({ theme }) => theme.spacing(2)};
 
   font-size: ${({ theme }) => theme.fontSizes.small};
   font-weight: 600;
@@ -28,6 +29,15 @@ export const StyledLink = styled(Link)`
     transform: scale(1.07);
     color: ${({ theme }) => theme.colors.golden};
     border-color: ${({ theme }) => theme.colors.golden};
+  }
+
+  @media only screen and (min-width: 768px) {
+    padding: ${({ theme }) => theme.spacing(3)};
+    margin: 10px 0;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    margin: 15px 0;
   }
 `;
 

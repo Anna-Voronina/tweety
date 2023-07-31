@@ -7,20 +7,30 @@ export const StyledHeader = styled.header`
   align-items: center;
 
   padding: 15px 20px;
-  margin-bottom: 15px;
+
+  @media only screen and (min-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 export const LogoLink = styled(Link)`
+  width: 100px;
   transition: transform ${({ theme }) => theme.transitions.regular};
 
   &:hover,
   &:focus {
     transform: scale(1.08);
   }
+
+  @media only screen and (min-width: 768px) {
+    width: 170px;
+  }
+
+  @media only screen and (min-width: 1280px) {
+    width: 250px;
+  }
 `;
 
 export const LogoPicture = styled.picture`
   display: block;
-  width: 170px;
-  height: 40px;
 `;

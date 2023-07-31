@@ -12,11 +12,11 @@ export const Header = () => {
       <LogoLink to="/">
         <LogoPicture>
           <source
-            srcSet={`${logoImgWebp} 1x, ${logoImgRetina} 2x`}
+            srcSet={`${logoImgWebp} 1x, ${logoImgWebpRetina} 2x`}
             type="image/webp"
           />
           <source
-            srcSet={`${logoImg} 1x, ${logoImgWebpRetina} 2x`}
+            srcSet={`${logoImg} 1x, ${logoImgRetina} 2x`}
             type="image/png"
           />
           <img src={logoImg} alt="logo" />
