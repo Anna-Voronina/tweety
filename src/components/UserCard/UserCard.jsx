@@ -5,6 +5,7 @@ import {
   updateUserFollowersThunk,
 } from "../../redux/users/operations";
 import { selectFollowingInProgress } from "../../redux/users/selectors";
+import { Button } from "../Button/Button";
 import {
   AvatarThumb,
   BgImgThumb,
@@ -19,7 +20,6 @@ import cardBgImgRetina from "./../../assets/images/background@2x.png";
 import cardBgImgWebp from "./../../assets/images/background.webp";
 import cardBgImgWebpRetina from "./../../assets/images/background@2x.webp";
 import logoIcon from "./../../assets/images/goit-logo.svg";
-import { Button } from "../Button/Button";
 
 export const UserCard = ({ userData }) => {
   const followingInProgress = useSelector(selectFollowingInProgress);

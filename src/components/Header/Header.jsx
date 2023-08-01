@@ -1,10 +1,10 @@
 import { LogoLink, LogoPicture, StyledHeader } from "./Header.styled";
+import { NavBar } from "../NavBar/NavBar";
 
 import logoImg from "./../../assets/images/logo.png";
 import logoImgRetina from "./../../assets/images/logo@2x.png";
 import logoImgWebp from "./../../assets/images/logo.webp";
 import logoImgWebpRetina from "./../../assets/images/logo@2x.webp";
-import { NavBar } from "../NavBar/NavBar";
 
 export const Header = () => {
   return (

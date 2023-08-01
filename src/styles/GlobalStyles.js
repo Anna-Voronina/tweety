@@ -3,11 +3,13 @@ import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyles = createGlobalStyle`
 body {
+  min-height: 100vh;
     margin: 0;
     font-family: 'Lora', serif;
     line-height: 1.2;
     background: rgb(0,3,81);
     background: linear-gradient(338deg, rgba(0,3,81,1) 22%, rgba(90,31,155,1) 63%, rgba(92,8,156,1) 93%);
+    background-repeat: no-repeat;    
 }
 
 h1,

@@ -15,5 +15,6 @@ export const updateFollowers = async ({ id, updatedFollowers, isFollowed }) => {
     followers: updatedFollowers,
     isFollowed,
   });
+
   return response;
 };
