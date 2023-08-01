@@ -5,7 +5,7 @@
 </div>
 <br>
 
-Welcome to [Tweety] (https://tweety-pi.vercel.app/)! We're so glad that you're here. Tweety is a great way to meet new people, stay connected with them, and share your thoughts and ideas with the world.
+Welcome to [Tweety](https://tweety-pi.vercel.app/)! We're so glad that you're here. Tweety is a great way to meet new people, stay connected with them, and share your thoughts and ideas with the world.
 
 ## What is Tweety?
 
