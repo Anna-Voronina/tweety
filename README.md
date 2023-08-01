@@ -1,6 +1,6 @@
 <div align="center">
   <br>
-  <img src='/src/assets/images/logo.png'>
+  <p><img src='/src/assets/images/logo.png'></p>
   <strong>Where the world comes together.</strong>
 </div>
 <br>
