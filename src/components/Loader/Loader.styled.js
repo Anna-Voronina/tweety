@@ -7,8 +7,13 @@ export const LoaderWrapper = styled.div`
   transform: translate(-50%, -50%);
 
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media only screen and (min-width: 768px) {
+    flex-direction: row;
+  }
 `;
 
 export const LoaderTitle = styled.h1`
